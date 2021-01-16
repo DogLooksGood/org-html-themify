@@ -193,14 +193,20 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--clr);
+  background: #999;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+body[data-theme='light'] {
+  background: var(--bg);
+  color: var(--clr);
+}
+
 body[data-theme='dark'] {
+  background: var(--bg);
+  color: var(--clr);
   --bc-tb: #{dark:mode-line:box:color|dark:hl-line:background|dark:default:foreground};
   --bc-block: #{dark:org-meta-line:foreground|dark:org-meta-line:background};
   --clr: #{dark:default:foreground};
