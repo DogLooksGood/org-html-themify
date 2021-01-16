@@ -1,0 +1,465 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	line-height: 1.35;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+body {
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+}
+
+hr {
+	height: 0;
+	color: inherit;
+}
+
+abbr[title] {
+	text-decoration: underline dotted;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace;
+	font-size: 1em;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+table {
+	text-indent: 0;
+	border-color: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+legend {
+	padding: 0;
+}
+
+progress {
+	vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+summary {
+	display: list-item;
+}
+
+:root {
+  --bc-tb: #{light:mode-line:box:color|light:hl-line:background};
+  --bc-block: #{light:org-meta-line:foreground|light:org-meta-line:background};
+  --clr: #{light:default:foreground};
+  --clr-tb-hd: #{light:mode-line:foreground};
+  --clr-code: #{light:mode-line:foreground};
+  --bg: #{light:default:background};
+  --bg-code: #{light:mode-line:background};
+  --bg-tb-hd: #{light:mode-line:background};
+  --bg-block: #{light:org-block:background};
+  --clr-link: #{light:font-lock-constant-face:foreground};
+  --clr-title: #{light:default:foreground};
+  --clr-todo: #{light:font-lock-string-face:foreground};
+  --bg-todo: #{light:font-lock-string-face:background};
+  --clr-done: #{light:font-lock-comment-face:foreground};
+  --bg-done: #{light:font-lock-comment-face:background};
+  --ts-clr: #{light:font-lock-keyword-face:foreground};
+  --mg: 20px;
+  --w-toc: 300px;
+  --bg-keyword: #{light:font-lock-keyword-face:background};
+  --clr-keyword: #{light:font-lock-keyword-face:foreground};
+  --bg-constant: #{light:font-lock-constant-face:background};
+  --clr-constant: #{light:font-lock-constant-face:foreground};
+  --bg-comment: #{light:font-lock-comment-face:background};
+  --clr-comment: #{light:font-lock-comment-face:foreground};
+  --bg-comment-delimiter: #{light:font-lock-comment-delimiter-face:background};
+  --clr-comment-delimiter: #{light:font-lock-comment-delimiter-face:foreground};
+  --bg-function: #{light:font-lock-function-name-face:background};
+  --clr-function: #{light:font-lock-function-name-face:foreground};
+  --bg-variable: #{light:font-lock-variable-name-face:background};
+  --clr-variable: #{light:font-lock-variable-name-face:foreground};
+  --bg-preprocessor: #{light:font-lock-preprocessor-face:background};
+  --clr-preprocessor: #{light:font-lock-preprocessor-face:foreground};
+  --bg-doc: #{light:font-lock-doc-face:background};
+  --clr-doc: #{light:font-lock-doc-face:foreground};
+  --bg-builtin: #{light:font-lock-builtin-face:background};
+  --clr-builtin: #{light:font-lock-builtin-face:foreground};
+  --bg-string: #{light:font-lock-string-face:background};
+  --clr-string: #{light:font-lock-string-face:foreground};
+}
+
+html {
+  font-family: Sans;
+}
+
+body {
+  background: var(--bg);
+  color: var(--clr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body[data-theme='dark'] {
+  --bc-tb: #{dark:mode-line:box:color|dark:hl-line:background};
+  --bc-block: #{dark:org-meta-line:foreground|dark:org-meta-line:background};
+  --clr: #{dark:default:foreground};
+  --clr-code: #{dark:mode-line:foreground};
+  --clr-tb-hd: #{dark:mode-line:foreground};
+  --bg: #{dark:default:background};
+  --bg-tb-hd: #{dark:mode-line:background};
+  --bg-code: #{dark:mode-line:background};
+  --bg-block: #{dark:org-block:background};
+  --clr-link: #{dark:font-lock-constant-face:foreground};
+  --clr-title: #{dark:default:foreground};
+  --clr-todo: #{dark:font-lock-string-face:foreground};
+  --bg-todo: #{dark:font-lock-string-face:background};
+  --clr-done: #{dark:font-lock-comment-face:foreground};
+  --bg-done: #{dark:font-lock-comment-face:background};
+  --ts-clr: #{dark:font-lock-keyword-face:foreground};
+  --mg: 20px;
+  --w-toc: 300px;
+  --bg-keyword: #{dark:font-lock-keyword-face:background};
+  --clr-keyword: #{dark:font-lock-keyword-face:foreground};
+  --bg-constant: #{dark:font-lock-constant-face:background};
+  --clr-constant: #{dark:font-lock-constant-face:foreground};
+  --bg-comment: #{dark:font-lock-comment-face:background};
+  --clr-comment: #{dark:font-lock-comment-face:foreground};
+  --bg-comment-delimiter: #{dark:font-lock-comment-delimiter-face:background};
+  --clr-comment-delimiter: #{dark:font-lock-comment-delimiter-face:foreground};
+  --bg-function: #{dark:font-lock-function-name-face:background};
+  --clr-function: #{dark:font-lock-function-name-face:foreground};
+  --bg-variable: #{dark:font-lock-variable-name-face:background};
+  --clr-variable: #{dark:font-lock-variable-name-face:foreground};
+  --bg-preprocessor: #{dark:font-lock-preprocessor-face:background};
+  --clr-preprocessor: #{dark:font-lock-preprocessor-face:foreground};
+  --bg-doc: #{dark:font-lock-doc-face:background};
+  --clr-doc: #{dark:font-lock-doc-face:foreground};
+  --bg-builtin: #{dark:font-lock-builtin-face:background};
+  --clr-builtin: #{dark:font-lock-builtin-face:foreground};
+  --bg-string: #{dark:font-lock-string-face:background};
+  --clr-string: #{dark:font-lock-string-face:foreground};
+}
+
+
+@media only screen and (max-width: 768px) {
+  #content {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #content {
+    width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    align-items: flex-end;
+  }
+  #content {
+    width: calc(100vw - var(--w-toc) - var(--mg) * 3);
+    margin-right: var(--mg);
+  }
+}
+
+h1 {
+  color: var(--clr-title);
+  text-align: center;
+}
+h2, h3, h4, h5, h6, h7 {
+  font-family: Sans Serif;
+}
+h2 {
+  line-height: 2.5em;
+}
+h2::before {
+  content: "◉ ";
+}
+h3::before {
+  content: "✸ ";
+}
+h4::before {
+  content: "▷ ";
+}
+
+code {
+  color: var(--clr-code);
+  background: var(--bg-code);
+  border-radius: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+pre {
+  padding: 20px;
+  border: 1px solid var(--bc-block);
+  background: var(--bg-block);
+  font-size: 0.9rem;
+  overflow-x: scroll;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.todo {
+  color: var(--clr-todo);
+  background: var(--bg-todo);
+}
+
+.done {
+  color: var(--clr-done);
+  background: var(--bg-done);
+}
+
+.timestamp-wrapper {
+  font-size: 0.8rem;
+  color: var(--clr-ts);
+}
+
+table {
+  width: 100%;
+  border: 2px solid var(--bc-tb);
+}
+
+thead {
+  color: var(--clr-tb-hd);
+  background: var(--bg-tb-hd);
+}
+
+td, th {
+  border: thin solid var(--bc-tb);
+}
+
+li {
+  line-height: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-link);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#table-of-contents > h2 {
+  display: none;
+}
+
+#table-of-contents {
+  border: thin solid var(--bc-block);
+  background: var(--bg-block);
+}
+
+#toggle-toc {
+  display: none;
+}
+
+.toc-show {
+  display: block!important;
+}
+
+@media only screen and (max-width: 768px) {
+  #toggle-toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 2em;
+    line-height: 2em;
+    display: block;
+  }
+  #table-of-contents {
+    background: var(--bg);
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+  }
+  #table-of-contents a {
+    color: var(--clr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #table-of-contents {
+    font-size: 0.8rem;
+    position: fixed;
+    left: var(--mg);
+    top: var(--mg);
+    bottom: var(--mg);
+    width: var(--w-toc);
+    overflow-y: scroll;
+  }
+}
+
+#table-of-contents::-webkit-scrollbar {
+  display: none;
+}
+
+#table-of-contents {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.MathJax_Display {
+  font-size: 1.25em;
+}
+
+#toggle-theme {
+  border-width: 0;
+  line-height: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background: var(--bg-block);
+  color: var(--clr-code);
+}
+
+#toggle-theme:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #toggle-theme {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #toggle-theme {
+    position: absolute;
+    top: var(--mg);
+    right: var(--mg);
+    border-radius: 5px;
+  }
+}
+
+.theme-transition {
+  transition: all 0.5s;
+}
+
+.status {
+  width: 100%;
+}

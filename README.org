@@ -1,0 +1,5 @@
+#+title: Org HTML Themify
+
+This package will generate inlined CSS style in your exported HTML, according to your installed Emacs color theme.
+
+* Usage
