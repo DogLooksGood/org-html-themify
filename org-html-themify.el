@@ -42,6 +42,7 @@
 (require 'htmlize)
 (require 'dash)
 (require 'org)
+(require 'ox-html)
 
 (defvar org-html-themify-themes
   '((dark . joker)
