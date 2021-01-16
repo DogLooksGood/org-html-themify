@@ -463,3 +463,14 @@ img {
 .status {
   width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+  ul {
+    padding-left: .5em;
+    margin-left: 0;
+  }
+  li {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
