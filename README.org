@@ -17,3 +17,12 @@ This package will generate inlined CSS style in your exported HTML, according to
        '((dark . modus-vivendi)
          (light . modus-operandi))))
   #+end_src
+* Screenshots
+
+  with popular Zenburn theme
+
+  [[file:https://user-images.githubusercontent.com/11796018/104815244-5adc1c00-584e-11eb-84d4-853aa7e15990.png]]
+
+  media query is also supported
+
+  [[file:https://user-images.githubusercontent.com/11796018/104815463-b5c24300-584f-11eb-8266-b26054cd524c.png]]
