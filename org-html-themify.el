@@ -54,6 +54,12 @@
 
 (defvar org-html-themify--backup-htmlize-face-overrides nil)
 
+(defvar org-html-themify--backup-org-html-preamble nil)
+
+(defvar org-html-themify--backup-org-html-head-extra "")
+
+(defvar org-html-themify--backup-org-html-postamble nil)
+
 (defvar org-html-themify-css-path
   (expand-file-name
    "org-html-themify.css"
@@ -112,16 +118,17 @@
           (concat
            "<div id=\"toggle-theme\">dark theme</div>"
            "<div id=\"toggle-toc\">&#9776;</div>"))
-    (setq org-html-head-include-default-style nil)
-    (setq org-html-head (concat
-                         "<style type=\"text/css\">\n"
-                         "<!--/*--><![CDATA[/*><!--*/\n"
-                         (with-temp-buffer
-                           (insert-file-contents org-html-themify-css-path)
-                           (org-html-themify--interpolate)
-                           (buffer-string))
-                         "/*]]>*/-->\n"
-                         "</style>\n"))
+    (setq org-html-head-extra
+          (concat
+           org-html-themify--backup-org-html-head-extra
+           "<style type=\"text/css\">\n"
+           "<!--/*--><![CDATA[/*><!--*/\n"
+           (with-temp-buffer
+             (insert-file-contents org-html-themify-css-path)
+             (org-html-themify--interpolate)
+             (buffer-string))
+           "/*]]>*/-->\n"
+           "</style>\n"))
     (setq org-html-postamble
           (concat
            "<script type=\"text/javascript\">\n"
@@ -134,7 +141,11 @@
 
 (defun org-html-themify--init ()
   (add-hook 'org-export-before-processing-hook 'org-html-themify--setup-inlines)
-  (setq org-html-themify--backup-htmlize-face-overrides htmlize-face-overrides)
+  (setq org-html-themify--backup-htmlize-face-overrides htmlize-face-overrides
+        org-html-themify--backup-org-html-head-extra org-html-head-extra
+        org-html-themify--backup-org-html-postamble org-html-postamble
+        org-html-themify--backup-org-html-preamble org-html-preamble)
+  (setq org-html-head-include-default-style nil)
   (setq htmlize-face-overrides
    '(font-lock-keyword-face (:foreground "var(--clr-keyword)" :background "var(--bg-keyword)")
      font-lock-constant-face (:foreground "var(--clr-constant)" :background "var(--bg-constant)")
@@ -149,7 +160,11 @@
 
 (defun org-html-themify--uninit ()
   (remove-hook 'org-export-before-processing-hook 'org-html-themify--setup-inlines)
-  (setq htmlize-face-overrides org-html-themify--backup-htmlize-face-overrides))
+  (setq org-html-head-include-default-style t)
+  (setq htmlize-face-overrides org-html-themify--backup-htmlize-face-overrides
+        org-html-head-extra org-html-themify--backup-org-html-head-extra
+        org-html-postamble org-html-themify--backup-org-html-postamble
+        org-html-preamble org-html-themify--backup-org-html-preamble))
 
 (define-minor-mode org-html-themify-mode
   "Themify org-mode HTML export with Emacs color theme."
