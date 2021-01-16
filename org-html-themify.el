@@ -40,6 +40,7 @@
 
 (require 'hexrgb)
 (require 'htmlize)
+(require 'dash)
 
 (defvar org-html-themify-themes
   '((dark . joker)

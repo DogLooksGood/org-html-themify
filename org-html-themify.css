@@ -148,7 +148,7 @@ summary {
 }
 
 :root {
-  --bc-tb: #{light:mode-line:box:color|light:hl-line:background};
+  --bc-tb: #{light:mode-line:box:color|light:hl-line:background|light:default:foreground};
   --bc-block: #{light:org-meta-line:foreground|light:org-meta-line:background};
   --clr: #{light:default:foreground};
   --clr-tb-hd: #{light:mode-line:foreground};
@@ -201,7 +201,7 @@ body {
 }
 
 body[data-theme='dark'] {
-  --bc-tb: #{dark:mode-line:box:color|dark:hl-line:background};
+  --bc-tb: #{dark:mode-line:box:color|dark:hl-line:background|dark:default:foreground};
   --bc-block: #{dark:org-meta-line:foreground|dark:org-meta-line:background};
   --clr: #{dark:default:foreground};
   --clr-code: #{dark:mode-line:foreground};
