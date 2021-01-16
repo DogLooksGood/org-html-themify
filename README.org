@@ -11,7 +11,8 @@ This package will generate inlined CSS style in your exported HTML, according to
        :type git
        :host github
        :repo "DogLooksGood/org-html-themify"
-       :files ("*.el", "*.js", "*.css"))
+       :files ("*.el" "*.js" "*.css"))
+      :hook (org-mode . org-html-themify-mode)
       :custom
       (org-html-themify-themes
        '((dark . modus-vivendi)
