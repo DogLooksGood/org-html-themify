@@ -3,7 +3,7 @@
 
 ;; Author: Shi Tianshu
 ;; Keywords: org-mode
-;; Package-Requires: ((emacs "27.1") (htmlize "1.5.6") (dash "2.17.0") (hexrgb "0"))
+;; Package-Requires: ((emacs "27.1") (org "9.4.4") (htmlize "1.5.6") (dash "2.17.0") (hexrgb "0"))
 ;; Version: 1.0.0
 ;; URL: https://www.github.com/DogLooksGood/org-html-themify
 ;;
@@ -41,6 +41,7 @@
 (require 'hexrgb)
 (require 'htmlize)
 (require 'dash)
+(require 'org)
 
 (defvar org-html-themify-themes
   '((dark . joker)
