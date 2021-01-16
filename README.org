@@ -3,3 +3,17 @@
 This package will generate inlined CSS style in your exported HTML, according to your installed Emacs color theme.
 
 * Usage
+
+  #+begin_src emacs-lisp
+    (use-package org-html-themify
+      :straight
+      (org-html-themify
+       :type git
+       :host github
+       :repo "DogLooksGood/org-html-themify"
+       :files ("*.el", "*.js", "*.css"))
+      :custom
+      (org-html-themify-themes
+       '((dark . modus-vivendi)
+         (light . modus-operandi))))
+  #+end_src

@@ -52,13 +52,13 @@
 
 (defvar org-html-themify-css-path
   (expand-file-name
-   "assets/org.css"
-   (file-name-directory (buffer-file-name))))
+   "org-html-themify.css"
+   (file-name-directory (or load-file-name (buffer-file-name)))))
 
 (defvar org-html-themify-js-path
   (expand-file-name
-   "assets/org.js"
-   (file-name-directory (buffer-file-name))))
+   "org-html-themify.js"
+   (file-name-directory (or load-file-name (buffer-file-name)))))
 
 (defun org-html-themify--parse-clause (clause)
   (-let* (((th f a k) (split-string clause ":"))
@@ -153,7 +153,7 @@
   nil
   nil
   nil
-  (if org-html-themify
+  (if org-html-themify-mode
       (org-html-themify--init)
     (org-html-themify--uninit)))
 
