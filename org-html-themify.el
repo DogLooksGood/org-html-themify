@@ -3,7 +3,7 @@
 
 ;; Author: Shi Tianshu
 ;; Keywords: org-mode
-;; Package-Requires: ((emacs "27.1") (org "9.4.4") (htmlize "1.5.6") (dash "2.17.0") (hexrgb "0"))
+;; Package-Requires: ((emacs "27.1") (org "9.4.4") (htmlize "1.5.6") (dash "2.17.0") (hexrgb "0") (s "1.12.0"))
 ;; Version: 1.0.0
 ;; URL: https://www.github.com/DogLooksGood/org-html-themify
 ;;
@@ -43,6 +43,7 @@
 (require 'dash)
 (require 'org)
 (require 'ox-html)
+(require 's)
 
 (defvar org-html-themify-themes
   '((dark . joker)
@@ -64,7 +65,7 @@
    (file-name-directory (or load-file-name (buffer-file-name)))))
 
 (defun org-html-themify--parse-clause (clause)
-  (-let* (((th f a k) (split-string clause ":"))
+  (-let* (((th f a k) (s-split ":" clause))
           (fs (intern f))
           (as (intern (concat ":" a)))
           (req-theme (alist-get (intern th) org-html-themify-themes))
@@ -80,8 +81,7 @@
 
 (defun org-html-themify--get-interpolate-value (s)
   (let* ((clauses (-> s
-                      (string-trim-left "#{")
-                      (string-trim-right "}")
+                      (substring 2 -1)
                       (split-string "|")))
          (vals (-keep #'org-html-themify--parse-clause clauses))
          (val (car vals)))
