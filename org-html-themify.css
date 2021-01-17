@@ -11,9 +11,6 @@ html {
 
 body {
 	margin: 0;
-}
-
-body {
 	font-family:
 		system-ui,
 		-apple-system,
@@ -29,10 +26,6 @@ body {
 hr {
 	height: 0;
 	color: inherit;
-}
-
-abbr[title] {
-	text-decoration: underline dotted;
 }
 
 b,
@@ -77,70 +70,6 @@ sup {
 table {
 	text-indent: 0;
 	border-color: inherit;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-family: inherit;
-	font-size: 100%;
-	line-height: 1.15;
-	margin: 0;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-	-webkit-appearance: button;
-}
-
-::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-:-moz-focusring {
-	outline: 1px dotted ButtonText;
-}
-
-
-:-moz-ui-invalid {
-	box-shadow: none;
-}
-
-legend {
-	padding: 0;
-}
-
-progress {
-	vertical-align: baseline;
-}
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-	height: auto;
-}
-
-[type='search'] {
-	-webkit-appearance: textfield; /* 1 */
-	outline-offset: -2px; /* 2 */
-}
-
-::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-	-webkit-appearance: button;
-	font: inherit;
 }
 
 summary {
