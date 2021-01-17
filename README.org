@@ -2,22 +2,43 @@
 
 This package will generate inlined CSS style in your exported HTML, according to your installed Emacs color theme.
 
+* Installation
+
+** with use-package & straight
+
+   #+begin_src emacs-lisp
+     (use-package org-html-themify
+       :straight
+       (org-html-themify
+        :type git
+        :host github
+        :repo "DogLooksGood/org-html-themify"
+        :files ("*.el" "*.js" "*.css"))
+       :hook (org-mode . org-html-themify-mode)
+       :custom
+       (org-html-themify-themes
+        '((dark . modus-vivendi)
+          (light . modus-operandi))))
+   #+end_src
+
+** manually
+
+   #+begin_src emacs-lisp
+     (add-to-list 'load-path "</path/to/org-html-themify>")
+
+     (require 'org-html-themify)
+
+     (setq org-html-themify-themes
+           '((dark . modus-vivendi)
+             (light . modus-operandi)))
+
+     (add-hook 'org-mode-hook 'org-html-themify-mode)
+   #+end_src
+
 * Usage
 
-  #+begin_src emacs-lisp
-    (use-package org-html-themify
-      :straight
-      (org-html-themify
-       :type git
-       :host github
-       :repo "DogLooksGood/org-html-themify"
-       :files ("*.el" "*.js" "*.css"))
-      :hook (org-mode . org-html-themify-mode)
-      :custom
-      (org-html-themify-themes
-       '((dark . modus-vivendi)
-         (light . modus-operandi))))
-  #+end_src
+  Just export org-mode to HTML files as usual.
+
 * Screenshots
 
   with popular Zenburn theme
