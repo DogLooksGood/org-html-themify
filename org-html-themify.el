@@ -46,7 +46,7 @@
 (require 's)
 
 (defvar org-html-themify-themes
-  '((dark . joker)
+  '((dark . tango-dark)
     (light . leuven))
   "Themes used to generate inline stylesheet.")
 
@@ -147,16 +147,18 @@
         org-html-themify--backup-org-html-preamble org-html-preamble)
   (setq org-html-head-include-default-style nil)
   (setq htmlize-face-overrides
-   '(font-lock-keyword-face (:foreground "var(--clr-keyword)" :background "var(--bg-keyword)")
-     font-lock-constant-face (:foreground "var(--clr-constant)" :background "var(--bg-constant)")
-     font-lock-comment-face (:foreground "var(--clr-comment)" :background "var(--bg-comment)")
-     font-lock-comment-delimiter-face (:foreground "var(--clr-comment-delimiter)" :background "var(--bg-comment-delimiter)")
-     font-lock-function-name-face (:foreground "var(--function-clr-name)" :background "var(--function-bg-name)")
-     font-lock-variable-name-face (:foreground "var(--clr-variable)" :background "var(--bg-variable)")
-     font-lock-preprocessor-face (:foreground "var(--clr-preprocessor)" :background "var(--bg-preprocessor)")
-     font-lock-doc-face (:foreground "var(--clr-doc)" :background "var(--bg-doc)")
-     font-lock-builtin-face (:foreground "var(--clr-builtin)" :background "var(--bg-builtin)")
-     font-lock-string-face (:foreground "var(--clr-string)" :background "var(--bg-string)"))))
+        (-concat
+         org-html-themify--backup-htmlize-face-overrides
+         '(font-lock-keyword-face (:foreground "var(--clr-keyword)" :background "var(--bg-keyword)")
+           font-lock-constant-face (:foreground "var(--clr-constant)" :background "var(--bg-constant)")
+           font-lock-comment-face (:foreground "var(--clr-comment)" :background "var(--bg-comment)")
+           font-lock-comment-delimiter-face (:foreground "var(--clr-comment-delimiter)" :background "var(--bg-comment-delimiter)")
+           font-lock-function-name-face (:foreground "var(--function-clr-name)" :background "var(--function-bg-name)")
+           font-lock-variable-name-face (:foreground "var(--clr-variable)" :background "var(--bg-variable)")
+           font-lock-preprocessor-face (:foreground "var(--clr-preprocessor)" :background "var(--bg-preprocessor)")
+           font-lock-doc-face (:foreground "var(--clr-doc)" :background "var(--bg-doc)")
+           font-lock-builtin-face (:foreground "var(--clr-builtin)" :background "var(--bg-builtin)")
+           font-lock-string-face (:foreground "var(--clr-string)" :background "var(--bg-string)")))))
 
 (defun org-html-themify--uninit ()
   (remove-hook 'org-export-before-processing-hook 'org-html-themify--setup-inlines)
