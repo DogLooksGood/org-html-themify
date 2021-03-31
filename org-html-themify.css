@@ -196,7 +196,7 @@ body[data-theme='dark'] {
     align-items: flex-end;
   }
   #content {
-    width: calc(100vw - var(--w-toc) - var(--mg) * 3);
+    width: calc(100vw - var(--w-toc) - var(--mg) * 4);
     margin-right: var(--mg);
   }
 }
